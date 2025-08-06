@@ -1,0 +1,123 @@
+/* src/styles/animated-background.css */
+
+/* Define custom properties for gradient colors for consistency */
+/* These are chosen to mimic the subtle purples, blues, and pinks from your image */
+:root {
+  --background-gradient-color-1: #6a1b9a; /* Deep Purple */
+  --background-gradient-color-2: #42a5f5; /* Light Blue */
+  --background-gradient-color-3: #ab47bc; /* Medium Purple */
+  --background-gradient-color-4: #ec407a; /* Pink */
+  --background-gradient-color-5: #00bcd4; /* Cyan/Teal */
+}
+
+/* Keyframes for movement */
+/* Each keyframe defines a path for a blob to follow */
+@keyframes moveGradient1 {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(10vw, 5vh) scale(1.05); }
+  66% { transform: translate(-5vw, -10vh) scale(0.98); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes moveGradient2 {
+  0% { transform: translate(0, 0) scale(1); }
+  40% { transform: translate(-10vw, 8vh) scale(1.02); }
+  80% { transform: translate(15vw, -5vh) scale(0.95); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes moveGradient3 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(12vw, -7vh) scale(1.08); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes pulseOpacity {
+  0%, 100% { opacity: 0.2; } /* Start with lower opacity */
+  50% { opacity: 0.4; }    /* Gently pulse to higher opacity */
+}
+
+/* Base styles for the animated gradient elements */
+.animated-gradient-blob {
+  position: absolute;
+  border-radius: 50%; /* Make them circular */
+  filter: blur(150px); /* Apply strong blur for soft glow effect */
+  opacity: 0.2; /* Initial subtle opacity */
+  pointer-events: none; /* Crucial: ensures clicks pass through to your actual content */
+}
+
+/* Specific blob styles and animations */
+/* Use vw and vh units for width/height/positioning to ensure responsiveness */
+.animated-gradient-blob.blob-1 {
+  width: 50vw;
+  height: 50vw;
+  top: -10vh;
+  left: -10vw;
+  background: radial-gradient(circle at center, var(--background-gradient-color-1) 0%, transparent 70%);
+  animation: moveGradient1 25s infinite alternate ease-in-out, pulseOpacity 10s infinite alternate;
+}
+
+.animated-gradient-blob.blob-2 {
+  width: 70vw;
+  height: 70vw;
+  bottom: -15vh;
+  right: -15vw;
+  background: radial-gradient(circle at center, var(--background-gradient-color-2) 0%, transparent 70%);
+  animation: moveGradient2 30s infinite alternate ease-in-out, pulseOpacity 12s infinite alternate;
+}
+
+.animated-gradient-blob.blob-3 {
+  width: 60vw;
+  height: 60vw;
+  top: 30vh;
+  left: 20vw;
+  background: radial-gradient(circle at center, var(--background-gradient-color-3) 0%, transparent 70%);
+  animation: moveGradient3 28s infinite alternate ease-in-out, pulseOpacity 11s infinite alternate;
+}
+
+.animated-gradient-blob.blob-4 {
+  width: 55vw;
+  height: 55vw;
+  bottom: 10vh;
+  left: -20vw;
+  background: radial-gradient(circle at center, var(--background-gradient-color-4) 0%, transparent 70%);
+  animation: moveGradient1 32s infinite alternate ease-in-out reverse, pulseOpacity 9s infinite alternate;
+}
+
+.animated-gradient-blob.blob-5 {
+  width: 65vw;
+  height: 65vw;
+  top: 15vh;
+  right: -25vw;
+  background: radial-gradient(circle at center, var(--background-gradient-color-5) 0%, transparent 70%);
+  animation: moveGradient2 27s infinite alternate ease-in-out reverse, pulseOpacity 13s infinite alternate;
+}
+
+/* Responsive Adjustments: Reduce blur/size on smaller screens for performance and visual fit */
+@media (max-width: 768px) {
+  .animated-gradient-blob {
+    filter: blur(100px); /* Slightly less blur on tablets/smaller desktops */
+  }
+  .animated-gradient-blob.blob-1,
+  .animated-gradient-blob.blob-2,
+  .animated-gradient-blob.blob-3,
+  .animated-gradient-blob.blob-4,
+  .animated-gradient-blob.blob-5 {
+    width: 80vw; /* Make them cover more area when viewport is smaller */
+    height: 80vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-gradient-blob {
+    filter: blur(80px); /* Further reduce blur on very small screens */
+  }
+  .animated-gradient-blob.blob-1,
+  .animated-gradient-blob.blob-2,
+  .animated-gradient-blob.blob-3,
+  .animated-gradient-blob.blob-4,
+  .animated-gradient-blob.blob-5 {
+    width: 90vw; /* Even larger to fill the view on mobile */
+    height: 90vw;
+  }
+}
