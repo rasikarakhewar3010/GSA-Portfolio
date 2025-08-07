@@ -1,22 +1,22 @@
 // src/App.js
-import './App.css'; // Keep any global CSS you might have
-import GoogleGeminiEffectDemo from './components/GoogleGeminiEffectDemo'; // Your hero component
+import { useState, useEffect } from 'react';
+// import LoadingAnimation from './components/LoadingAnimation';
+import Lenis from '@studio-freight/lenis';
+import './App.css';
+import GoogleGeminiEffectDemo from './components/GoogleGeminiEffectDemo';
 import AboutMe from './components/AboutMe';
-
+import CampusImpact from './components/CampusImpact';
 
 function App() {
-  return (
-    // The main container for your entire application.
-    // `relative` is important if you use `absolute` positioning within your content components later.
-    // `bg-black` ensures a dark base color for the entire page.
-    <div className="relative min-h-screen bg-black text-white">
+  
 
+  return (
+
+    <div className="relative min-h-screen bg-black text-white">
       {/* Your Hero Component will now handle the animated background */}
       <GoogleGeminiEffectDemo />
       <AboutMe />
-
-
-     
+      <CampusImpact />
     </div>
   );
 }

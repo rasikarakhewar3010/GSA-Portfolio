@@ -1,11 +1,30 @@
 "use client";
 
-import { useScroll, useTransform } from "framer-motion"; // Corrected import from 'motion/react' to 'framer-motion'
-import React from "react";
-import { GoogleGeminiEffect } from "./ui/google-gemini-effect"; // This is your sub-component for text/SVG
+import { useScroll, useTransform, motion } from "framer-motion";
+import React, { useEffect } from "react";
+import { GoogleGeminiEffect } from "./ui/google-gemini-effect";
+import Lenis from '@studio-freight/lenis';
 
 export default function GoogleGeminiEffectDemo() {
   const ref = React.useRef(null);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      lerp: 0.1,
+      smoothWheel: true
+    });
+
+    const raf = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: ref,

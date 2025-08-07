@@ -112,7 +112,7 @@ const AboutMe = () => {
       <div className="custom-cursor" id="custom-cursor" />
 
       <motion.section 
-        className="relative min-h-screen w-full flex items-center justify-center px-4 py-20 overflow-hidden"
+        className="relative min-h-screen w-full flex items-center justify-center px-4 py-15 overflow-hidden"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -181,8 +181,7 @@ const AboutMe = () => {
               >
                 <FaRobot className="text-[#0569f5] text-2xl mr-4 mt-1 flex-shrink-0" />
                 <span>
-                  <strong className="text-white">Rasika Rakhewar</strong> — Computer Science student specializing in AI systems. 
-                  I create technical solutions that bridge academic research with real-world impact through responsible innovation.
+                  <strong className="text-white">Rasika Rakhewar</strong> — As the Web Development Co-Head at GDG On-Campus MGM, I’ve led two impactful workshops focused on empowering students with hands-on experience in web technologies, Firebase, and Google tools like Gemini and Google Cloud.
                 </span>
               </motion.p>
 
@@ -193,8 +192,7 @@ const AboutMe = () => {
               >
                 <FaPeopleGroup className="text-[#4FABFF] text-2xl mr-4 mt-1 flex-shrink-0" />
                 <span>
-                  As a <strong className="text-white">Google Student Ambassador</strong> candidate, I lead workshops on Gemini and 
-                  AI tools, helping students transform ideas into deployable solutions.
+                  I designed and developed the official website for <strong className="text-white">HackSpectra Hackathon</strong> at MGM College, demonstrating my commitment to creating impactful technical solutions for community events.
                 </span>
               </motion.p>
             </motion.div>
@@ -206,13 +204,14 @@ const AboutMe = () => {
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#0569f5] to-[#e963a2] opacity-20 blur-xl -z-10" />
               <div className="bg-[#0a0a1a] rounded-2xl p-6 border border-[#ffffff10]">
-                <h3 className="text-xl font-semibold text-[#4FABFF] mb-4">Core Focus Areas</h3>
+                <h3 className="text-xl font-semibold text-[#4FABFF] mb-4">Technical Expertise</h3>
                 <ul className="space-y-3">
                   {[
-                    "Generative AI & LLM Applications",
-                    "Technical Community Building",
-                    "AI for Social Impact",
-                    "Developer Relations"
+                    "Web Development & UI/UX Design",
+                    "Google Technologies Integration",
+                    "Workshop Facilitation",
+                    "Community Building",
+                    "Hackathon Organization"
                   ].map((item, i) => (
                     <motion.li 
                       key={i}
@@ -251,7 +250,7 @@ const AboutMe = () => {
               </span>
             </motion.a>
 
-            <motion.a
+            {/* <motion.a
               href="https://your-video-link.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -264,7 +263,7 @@ const AboutMe = () => {
                 <FaVideo className="mr-3" />
                 Watch Introduction
               </span>
-            </motion.a>
+            </motion.a> */}
           </motion.div>
         </motion.div>
       </motion.section>
