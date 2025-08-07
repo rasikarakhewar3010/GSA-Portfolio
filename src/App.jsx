@@ -1,11 +1,11 @@
 // src/App.js
-import { useState, useEffect } from 'react';
-// import LoadingAnimation from './components/LoadingAnimation';
 import Lenis from '@studio-freight/lenis';
 import './App.css';
 import GoogleGeminiEffectDemo from './components/GoogleGeminiEffectDemo';
 import AboutMe from './components/AboutMe';
 import CampusImpact from './components/CampusImpact';
+import ContactMe from './components/ContactMe';
+
 
 function App() {
   
@@ -17,6 +17,7 @@ function App() {
       <GoogleGeminiEffectDemo />
       <AboutMe />
       <CampusImpact />
+      <ContactMe/>
     </div>
   );
 }

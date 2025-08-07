@@ -107,7 +107,7 @@ const CampusImpact = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#000] to-[#000] py-24 px-6"
+      className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#000] to-[#000] py-20 px-6"
     >
       {/* Certificate Dialog */}
       {showCertificate && (
@@ -166,10 +166,6 @@ const CampusImpact = () => {
       <div className="relative z-10 container mx-auto max-w-7xl">
         {/* Section Header with Gemini theme */}
         <div ref={titleRef} className="text-center mb-20">
-          <div className="inline-flex items-center px-6 py-3 rounded-full bg-[#0569f5] bg-opacity-20 text-[#4FABFF] font-medium mb-6">
-            <FaRobot className="mr-3" />
-            <span>Community Leadership</span>
-          </div>
           <h2 className="text-4xl sm:text-5xl font-light text-transparent bg-clip-text bg-gradient-to-r from-[#4FABFF] via-[#a368ff] to-[#e963a2] mb-6">
             Campus Impact
           </h2>
